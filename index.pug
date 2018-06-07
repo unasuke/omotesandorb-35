@@ -3,7 +3,7 @@ html
   head
     meta(charset='utf-8')
     meta(name='viewport', content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no')
-    title
+    title The world of mail.gem (maybe) not you know.
     link(rel='stylesheet', href='css/reveal.min.css')
     link(rel='stylesheet', href='css/theme/white.css')
     link(rel='stylesheet', href='lib/css/zenburn.css')
@@ -20,6 +20,215 @@ html
     .reveal
       .slides
         section
+          h1 The world of mail.gem (maybe) not you know.
+          p 2018-06-07
+          p 表参道.rb #35
+          p うなすけ
+        section
+          h2 about me
+          .flex-container
+            .item-40
+              img(src='img/icon_raw.jpg' alt='icon')
+            .item-60
+              ul
+                li name: うなすけ(unasuke)
+                li Bank, inc
+                ul
+                  li: a(href='https://bank.co.jp') https://bank.co.jp
+                li engineer (server side)
+                br
+                li
+                  | twitter&nbsp;
+                  i.fa.fa-twitter
+                  | :&nbsp;
+                  a(href='https://twitter.com/yu_suke1994') @yu_suke1994
+                li
+                  | GitHub&nbsp;
+                  i.fa.fa-github
+                  | :&nbsp;
+                  a(href='https://github.com/unasuke') @unasuke
+        section
+          img(src='img/cfp-app.png')
+        section
+          h2: s RejectKaigi
+          h2 RejectLTKaigi
+          small a.k.a. omotesando.rb
+        section
+          h1 The world of mail.gem (maybe) not you know.
+          p 2018-06-07
+          p 表参道.rb #35
+          p うなすけ
+        section
+          h2 Do you know mail.gem ?
+        section
+          img(src='img/rubygems-org-mail.png')
+          a(href='https://rubygems.org/gems/mail') https://rubygems.org/gems/mail
+        section
+          p see also 'actionmailer'
+          img(src='img/rubygems-org-actionmailer.png')
+          a(href='https://rubygems.org/gems/actionmailer') https://rubygems.org/gems/actionmailer
+        section
+         p ok.
+        section
+          h2 2018-04-14
+        section
+          h2 2018-04-14 asakusarb#456
+          p koic & yahonda says...
+          img(src='https://pbs.twimg.com/profile_images/674206748895371265/FH1O0n_l_400x400.png')
+          img(src='https://pbs.twimg.com/profile_images/275691649/n694722665_8206_400x400.jpg')
+        section
+          p 「誰かやってくれないかな〜〜」
+        section
+          p ぼく 「やったらぁ！！！！」
+        section
+          h2 WHAT?
+        section
+          h2 Rails CI
+          img(src='img/rails-actionmailer-ci-apr.png')
+          a(href='https://travis-ci.org/rails/rails/jobs/365773392') https://travis-ci.org/rails/rails/jobs/365773392
+        section
+          h2 many many warning messages!!!
+          p in ruby-head
+        section
+          img(src='img/ruby-case-when-outdated.png')
+        section
+          h2 mail.gem
+          img(src='img/rails-actionmailer-ci-apr.png')
+        section
+          p parsers/content_type_parser.rb
+          img(src='img/part-of-mail-gem-in-apr.png')
+          a(href='https://github.com/mikel/mail/blob/fbc5d91ae9b68b3c4ad450a22055a74dfce1caf9/lib/mail/parsers/content_type_parser.rb#L821-L831') on GitHub
+        section
+          p ?!?!
+          img(src='img/part-of-mail-gem-in-apr.png')
+        section
+          p file lists
+          img(src='img/mail-gem-files.png')
+          a(href='https://github.com/mikel/mail/tree/fbc5d91ae9b68b3c4ad450a22055a74dfce1caf9/lib/mail/parsers') on GitHub
+        section
+          p .rl ?????
+          img(src='img/mail-gem-files.png')
+        section
+          p
+            | ragel???!?!?!?
+          img(src='img/mail-gem-rake-before.png')
+          a(href='https://github.com/mikel/mail/blob/6bc16b4bce4fe280b19523c939b14a30e32a8ba4/tasks/ragel.rake#L19-L22') on GitHub
+        section
+          h2 What is Ragel?
+          img(src='img/rubima-ragel.png')
+          a(href='https://magazine.rubyist.net/articles/0023/0023-Ragel.html') https://magazine.rubyist.net/articles/0023/0023-Ragel.html
+        section
+          h2 What is Ragel?
+          blockquote
+            | Ragel とは、Adrian Thurston によって作られたステートマシンコンパイラです。 Ragel を使うと、コンパイラやパーサの字句解析部を簡単に作れます。 また Ragel は複数の言語に対応しており、現在のところ C/C++/Objective-C/D/Java/Ruby のソースコードを生成することができます。
+          a(href='https://magazine.rubyist.net/articles/0023/0023-Ragel.html') https://magazine.rubyist.net/articles/0023/0023-Ragel.html
+        section
+          h2 What is Ragel?
+          img(src='img/ragel-official-webpage.png')
+          a(href='http://www.colm.net/open-source/ragel/') http://www.colm.net/open-source/ragel/
+        section
+          h2 Ragel code
+          img(src='img/ragel-code-in-mail.png')
+          a(href='https://github.com/mikel/mail/blob/6bc16b4bce4fe280b19523c939b14a30e32a8ba4/lib/mail/parsers/address_lists_parser.rl#L51-L58') on GitHub
+        section
+          h2 Let's dev Ragel!
+          img(src='img/clone-ragel.png')
+          p Way to compile ragel is undocument in README....
+        section
+          h2 Let's dev Ragel!
+          h3 Ragel's README
+          blockquote
+            |
+            | REQUIRED DEPENDENCIES
+            | ---------------------
+            |
+            | Colm is a mandatory dependency.
+            |
+            | http://www.colm.net/files/colm/colm-0.13.0.3.tar.gz
+            |
+            | Either install this to your path or configure the location using
+            | --with-colm=DEST and pass it the prefix colm was installed to.
+        section
+          p.big Colm is a mandatory dependency.
+        section
+          h2.big What's Colm?
+          small yak shaving...
+        section
+          h2 What is Colm?
+          img(src='img/colm-official-webpage.png')
+          a(href='http://www.colm.net/open-source/colm/') http://www.colm.net/open-source/colm/
+        section
+          h2.big Colm Programming Language
+        section
+          img(src='https://emojipedia-us.s3.amazonaws.com/thumbs/120/apple/129/shocked-face-with-exploding-head_1f92f.png' width='400px')
+        section
+          h2 Ok...
+          p I should find another method.
+        section
+          h2 How to format ugly code?
+          img(src='img/gofmt.png')
+        section
+          h2 How to format ugly code?
+          h3 We know RuboCop
+          blockquote
+            | -a/--auto-correct	Auto-correct certain offenses. Note: Experimental - use with caution.
+          small
+            a(href='https://rubocop.readthedocs.io/en/latest/basic_usage/') https://rubocop.readthedocs.io/en/latest/basic_usage/
+        section
+          h2 How to format ugly code?
+          h3 We know RuboCop
+          p But, RuboCop is not code formatter.
+          blockquote
+            | RuboCop is a Ruby static code analyzer.
+          small
+            a(href='https://rubocop.readthedocs.io/en/latest/') https://rubocop.readthedocs.io/en/latest/
+        section
+          h2 How to format ugly code?
+          img(src='img/google-ruby-code-formatter.png')
+        section
+          h2 How to format ugly code?
+          h3 ruby-formatter/rufo
+          blockquote
+            | Rufo is as an opinionated ruby formatter, intended to be used via the command line as a text-editor plugin, to autoformat files on save or on demand.
+          a(href='https://github.com/ruby-formatter/rufo') https://github.com/ruby-formatter/rufo
+        section
+          h2 How to format ugly code?
+          h3 ruby-formatter/rufo
+          p.big It seems good!
+        section
+          h2 How to format ugly code?
+          p ragel → ugly ruby code → rufo → clean ruby code
+          img(src='img/rake-task-but-this-is-fail.png')
+        section
+          h2.big Rake task fail!!
+        section
+          img(src='https://emojipedia-us.s3.amazonaws.com/thumbs/120/apple/129/smiling-face-with-halo_1f607.png' width='400px')
+        section
+          h2 ruby/rake #39
+          img(src='img/rake-pullreq-39.png')
+          a(href='https://github.com/ruby/rake/pull/39') https://github.com/ruby/rake/pull/39
+        section
+          h2 So...
+          p I submitted 2 pull requests(were merged!)
+          ul
+            li: a(href='https://github.com/mikel/mail/pull/1221') https://github.com/mikel/mail/pull/1221
+            li: a(href='https://github.com/mikel/mail/pull/1222') https://github.com/mikel/mail/pull/1222
+        section
+          h2 So...
+          p I submitted 2 pull requests(were merged!)
+          img(src='img/mail-gem-pull-req-1221.png')
+          a(href='https://github.com/mikel/mail/pull/1221') https://github.com/mikel/mail/pull/1221
+        section
+          h2 So...
+          p I submitted 2 pull requests(were merged!)
+          img(src='img/mail-gem-pull-req-1222.png')
+          a(href='https://github.com/mikel/mail/pull/1222') https://github.com/mikel/mail/pull/1222
+        section
+          h2 conclusion
+          ul
+            li You know Ragel and Colm now
+            li mail.gem's code generated by Ragel
+            li asakusarb is great (omotesandorb too)
 
     script(src='lib/js/head.min.js')
     script(src='js/reveal.min.js')
